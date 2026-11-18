@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { getVisiblePages } from '../src/components/book/BookNavigation';
-import { computeBookLayout, PAGE_RATIO } from '../src/hooks/useResponsiveBook';
+import { computeBookLayout, PAGE_RATIO, SIZE_MULTIPLIER } from '../src/hooks/useResponsiveBook';
 
 describe('getVisiblePages (4-page book)', () => {
   it('shows one page at a time in portrait (mobile)', () => {
@@ -15,22 +15,30 @@ describe('getVisiblePages (4-page book)', () => {
   });
 });
 
-describe('computeBookLayout', () => {
-  it('uses single-page mode on a 375×812 phone and fits the width', () => {
-    const layout = computeBookLayout(375, 812);
-    expect(layout.isMobile).toBe(true);
-    expect(layout.pageWidth).toBeLessThanOrEqual(375 - 24);
+describe('computeBookLayout (+70% size multiplier)', () => {
+  it('has SIZE_MULTIPLIER set to 1.7 (+70%)', () => {
+    expect(SIZE_MULTIPLIER).toBe(1.7);
   });
 
-  it('uses spread mode on a 1280×800 desktop and fits both pages', () => {
-    const layout = computeBookLayout(1280, 800);
-    expect(layout.isMobile).toBe(false);
-    expect(layout.pageWidth * 2).toBeLessThanOrEqual(1280);
-    expect(layout.pageHeight).toBeLessThanOrEqual(800);
+  it('uses single-page mode on a 375×812 phone and fits within horizontal viewport', () => {
+    const layout = computeBookLayout(375, 812);
+    expect(layout.isMobile).toBe(true);
+    expect(layout.pageWidth).toBeLessThanOrEqual(375 - 16);
+  });
+
+  it('scales desktop pages up by 70% (e.g. 480 * 1.7 = 816px on 1920×1080) while fitting 2-page spread horizontally', () => {
+    const fullHd = computeBookLayout(1920, 1080);
+    expect(fullHd.isMobile).toBe(false);
+    expect(fullHd.pageWidth).toBe(Math.floor(480 * 1.7)); // 816px
+    expect(fullHd.pageWidth * 2).toBeLessThanOrEqual(1920);
+
+    const laptop = computeBookLayout(1280, 800);
+    expect(laptop.isMobile).toBe(false);
+    expect(laptop.pageWidth * 2).toBeLessThanOrEqual(1280);
   });
 
   it('keeps the invitation aspect ratio', () => {
-    const { pageWidth, pageHeight } = computeBookLayout(1280, 800);
+    const { pageWidth, pageHeight } = computeBookLayout(1920, 1080);
     expect(pageWidth / pageHeight).toBeCloseTo(PAGE_RATIO, 1);
   });
 });

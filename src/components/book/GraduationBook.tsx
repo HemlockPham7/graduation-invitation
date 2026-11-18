@@ -167,9 +167,9 @@ export function GraduationBook({ pages, onPageChange }: GraduationBookProps) {
               showCover
               mobileScrollSupport
               clickEventForward
-              useMouseEvents
+              useMouseEvents={false}
               swipeDistance={30}
-              showPageCorners
+              showPageCorners={false}
               disableFlipByClick
               renderOnlyPageLengthChange
               onFlip={handleFlip}

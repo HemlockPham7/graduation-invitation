@@ -184,7 +184,7 @@ export const invitationConfig: InvitationConfig = {
 - Cấu hình `<HTMLFlipBook>`:
   - `showCover={true}`: Giúp **Trang 0** đóng vai trò bìa cứng phía trước và **Trang 3** đóng vai trò bìa cứng phía sau.
   - `usePortrait={true}`: Trên màn hình hẹp (Mobile < 768px), sách tự động chuyển về chế độ lật từng trang đơn (`Trang 0` → `Trang 1` → `Trang 2` → `Trang 3`). Trên Desktop (≥ 768px), khi mở bìa Trang 0 sẽ hiện song song **Trang 1 (trái)** và **Trang 2 (phải)**, lật tiếp sẽ tới **Trang 3 (bìa sau)**.
-  - `useMouseEvents={true}` & `mobileScrollSupport={true}`: Cho phép vừa bấm nút **Next / Previous**, vừa kéo góc trang trên màn hình cảm ứng hoặc chuột.
+  - `useMouseEvents={false}` & `showPageCorners={false}` & `disableFlipByClick={true}`: Tắt hoàn toàn tính năng click chuột / kéo góc bìa để sang trang; việc lật trang chỉ thực hiện thông qua nút **Next / Previous** (và các nút điều hướng rõ ràng).
 - **Lưu ý tương tác nút bấm trong `react-pageflip`:** Các nút tương tác bên trong trang sách (như nút *"Mở Google Maps"* ở Trang 2 và nút *"Gọi điện / Sao chép SĐT"* ở Trang 3) cần dừng lan truyền sự kiện (`onPointerDown={(e) => e.stopPropagation()}` / `onMouseDown={(e) => e.stopPropagation()}`) để khi người dùng bấm nút không bị kích hoạt nhầm hành động lật trang.
 
 ### 5.4. Thiết kế Bản đồ Vẽ tay Phong cách Thiệp cưới (`WeddingStyleMap.tsx`)

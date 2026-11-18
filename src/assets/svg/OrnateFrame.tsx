@@ -4,17 +4,17 @@ interface OrnateFrameProps {
 }
 
 const CORNER_POSITIONS = [
-  'left-2 top-2',
-  'right-2 top-2 rotate-90',
-  'bottom-2 right-2 rotate-180',
-  'bottom-2 left-2 -rotate-90',
+  'left-2.5 top-2.5 sm:left-4 sm:top-4',
+  'right-2.5 top-2.5 sm:right-4 sm:top-4 rotate-90',
+  'bottom-2.5 right-2.5 sm:bottom-4 sm:right-4 rotate-180',
+  'bottom-2.5 left-2.5 sm:bottom-4 sm:left-4 -rotate-90',
 ] as const;
 
 function CornerFlourish({ className }: { className: string }) {
   return (
     <svg
       viewBox="0 0 48 48"
-      className={`absolute h-10 w-10 text-hcmus-gold sm:h-12 sm:w-12 ${className}`}
+      className={`absolute h-11 w-11 text-hcmus-gold sm:h-16 sm:w-16 md:h-20 md:w-20 ${className}`}
       fill="none"
       stroke="currentColor"
     >
@@ -36,8 +36,8 @@ export function OrnateFrame({ tone = 'cream' }: OrnateFrameProps) {
 
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-      <div className={`absolute inset-3 border ${outer}`} />
-      <div className={`absolute inset-[18px] border ${inner}`} />
+      <div className={`absolute inset-3.5 sm:inset-5 border ${outer}`} />
+      <div className={`absolute inset-[20px] sm:inset-[28px] border ${inner}`} />
       {CORNER_POSITIONS.map((position) => (
         <CornerFlourish key={position} className={position} />
       ))}

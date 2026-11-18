@@ -82,7 +82,7 @@ Cuốn sách gồm **4 trang (tương ứng chỉ mục Trang 0, Trang 1, Trang 
 ## 5. Trải Nghiệm Tương Tác & Hiệu Ứng (Interactive Experience)
 
 1. **Hiệu ứng Lật Sách 3D & Điều Hướng (3D Book Flip & Navigation):**
-   - **Trên Mobile / Màn hình dọc (< 768px):** Hiển thị **1 trang đơn (Single-page portrait mode)**. Người dùng bấm nút **Next / Previous** hoặc vuốt/chạm góc trang để lật lần lượt từng trang: `Trang 0` → `Trang 1` → `Trang 2` → `Trang 3`.
+   - **Trên Mobile / Màn hình dọc (< 768px):** Hiển thị **1 trang đơn (Single-page portrait mode)**. Người dùng bấm nút **Next / Previous** để lật lần lượt từng trang: `Trang 0` → `Trang 1` → `Trang 2` → `Trang 3` (tắt thao tác kéo/click trực tiếp lên bìa sách).
    - **Trên Desktop / Màn hình ngang (≥ 768px):** Hiển thị **chế độ cuốn sách có bìa (2-page spread mode with cover)**:
      - Trạng thái đầu: **Trang 0 (Bìa trước)** nằm trang trọng ở giữa.
      - Bấm **Next**: Sách mở đôi hiển thị **Trang 1 (bên trái - Thư mời)** và **Trang 2 (bên phải - Bản đồ thiệp cưới)**.

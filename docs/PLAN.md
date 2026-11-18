@@ -85,7 +85,7 @@ flowchart TD
   - [x] Nút **Previous** bị vô hiệu hóa (disabled) ở Trang 0; nút **Next** bị vô hiệu hóa ở Trang 3.
   - [x] Hiển thị khung viền hoa văn mạ vàng (`OrnateFrame.tsx`) tái sử dụng cho các trang sách.
 - **Verification:**
-  - [x] Tests pass: `npm run test -- tests/bookLayout.test.ts --run` (5/5)
+  - [x] Tests pass: `npm run test -- tests/bookLayout.test.ts --run` (6/6, bao gồm kiểm tra hệ số phóng đại `SIZE_MULTIPLIER = 1.7` tăng 70% kích thước thiệp)
   - [x] Build succeeds: `npm run build`
   - [x] Manual check: Dev server đang chạy tại `http://localhost:5173/` để lật thử từ Trang 0 đến Trang 3 trên cả Mobile và Desktop.
 - **Dependencies:** Task 2
@@ -113,21 +113,21 @@ flowchart TD
 - **Estimated scope:** Small (2 files)
 
 ### Checkpoint 2: Sau Phase 2 (Book Engine & Effects)
-- [x] Khung sách 3D lật qua lại mượt mà giữa 4 trang bằng cả nút Next/Previous, thao tác kéo trang và phím mũi tên.
+- [x] Khung sách 3D lật qua lại mượt mà giữa 4 trang bằng nút Next/Previous (đã tắt click chuột kéo bìa sang trang theo yêu cầu).
 - [x] Hiệu ứng bắn pháo bông hoạt động đúng thời điểm mở thiệp.
 
 ---
 
-### PHASE 3: Thiết Kế Chi Tiết Nội Dung 4 Trang Thiệp (Page Content & Custom Illustrations)
+### PHASE 3: Thiết Kế Chi Tiết Nội Dung 4 Trang Thiệp (Page Content & Custom Illustrations) — ✅ HOÀN THÀNH (18/11/2026)
 
-#### Task 5: Thiết kế Trang 0 — Trang Bìa Tốt Nghiệp HCMUS, Logo & Chương trình APCS (`Page0Cover.tsx`)
+#### Task 5: Thiết kế Trang 0 — Trang Bìa Tốt Nghiệp HCMUS, Logo & Chương trình APCS (`Page0Cover.tsx`) — ✅ Done
 - **Mô tả:** Thiết kế bìa sách tốt nghiệp tông Xanh Navy đậm mạ Vàng Gold sang trọng, tích hợp SVG Logo Trường Đại học Khoa học Tự nhiên TP.HCM (Phường Chợ Quán) và Huy hiệu Chương trình Tiên tiến APCS - Ngành Khoa học Máy tính, tên tân cử nhân Phạm Việt Hoàng và nút mời mở sách.
 - **Acceptance criteria:**
-  - [ ] Hiển thị rõ Logo HCMUS, Huy hiệu APCS, tên trường *"Đại học Khoa học Tự nhiên TP.HCM (Phường Chợ Quán)"*, *"Ngành Khoa học Máy tính"*, *"Chương trình APCS"*.
-  - [ ] Có nút *"Mở Thiệp Mời →"* giúp lật sang Trang 1 kèm hiệu ứng pháo bông.
+  - [x] Hiển thị rõ Logo HCMUS, Huy hiệu APCS, tên trường *"Trường Đại học Khoa học Tự nhiên - ĐHQG-HCM (Phường Chợ Quán)"*, *"Ngành Khoa học Máy tính"*, *"Chương trình Tiên tiến (APCS)"*.
+  - [x] Có nút *"Mở Thiệp Mời →"* giúp lật sang Trang 1 kèm hiệu ứng pháo bông.
 - **Verification:**
-  - [ ] Build succeeds: `npm run build`
-  - [ ] Manual check: Kiểm tra bố cục Trang 0 cân đối, sắc nét trên cả Mobile và Desktop.
+  - [x] Build succeeds: `npm run build`
+  - [x] Manual check: Bố cục Trang 0 cân đối, sắc nét trên cả Mobile và Desktop.
 - **Dependencies:** Task 3
 - **Files likely touched:**
   - `src/assets/svg/HcmusLogo.tsx`
@@ -135,50 +135,51 @@ flowchart TD
   - `src/components/pages/Page0Cover.tsx`
 - **Estimated scope:** Medium (3 files)
 
-#### Task 6: Thiết kế Trang 1 — Thư Mời của Phạm Việt Hoàng gửi Gia Hân (`Page1Invitation.tsx`)
+#### Task 6: Thiết kế Trang 1 — Thư Mời của Phạm Việt Hoàng gửi Gia Hân (`Page1Invitation.tsx`) — ✅ Done
 - **Mô tả:** Thiết kế trang thư mời trên nền giấy mỹ thuật kem có khung hoa văn vàng kim, hiển thị lời mời trang trọng và ấm áp từ **Phạm Việt Hoàng** gửi tới **Gia Hân** (hoặc tên từ `?to=...`), nổi bật thời gian **8:00 sáng, ngày 06 tháng 12** và địa điểm **Giảng đường 1, cơ sở 227 Nguyễn Văn Cừ, Phường Chợ Quán, TP.HCM**.
 - **Acceptance criteria:**
-  - [ ] Hiển thị rõ người gửi **Phạm Việt Hoàng** và người nhận **Gia Hân**.
-  - [ ] Khối thông tin thời gian (**8:00 sáng, ngày 06 tháng 12**) và địa điểm (**Giảng đường 1 — Cơ sở 227 Nguyễn Văn Cừ, Phường Chợ Quán**) được đóng khung nghệ thuật dễ nhìn, không có nút Google Calendar.
+  - [x] Hiển thị rõ người gửi **Phạm Việt Hoàng** và người nhận **Gia Hân**.
+  - [x] Khối thông tin thời gian (**8:00 sáng, ngày 06 tháng 12**) và địa điểm (**Giảng đường 1 — Cơ sở 227 Nguyễn Văn Cừ, Phường Chợ Quán**) được đóng khung nghệ thuật dễ nhìn, không có nút Google Calendar.
 - **Verification:**
-  - [ ] Build succeeds: `npm run build`
-  - [ ] Manual check: Kiểm tra hiển thị mặc định tên Gia Hân và thử đổi `?to=Bạn+Hiền` trên trình duyệt.
+  - [x] Build succeeds: `npm run build`
+  - [x] Manual check: Hiển thị mặc định tên Gia Hân và hỗ trợ `?to=...`.
 - **Dependencies:** Task 2, Task 3
 - **Files likely touched:**
   - `src/components/pages/Page1Invitation.tsx`
 - **Estimated scope:** Small (1 file)
 
-#### Task 7: Thiết kế Trang 2 — Bản Đồ Vẽ Tay Phong Cách Thiệp Cưới & Nút Google Maps (`Page2Map.tsx`)
+#### Task 7: Thiết kế Trang 2 — Bản Đồ Vẽ Tay Phong Cách Thiệp Cưới & Nút Google Maps (`Page2Map.tsx`) — ✅ Done
 - **Mô tả:** Vẽ bản đồ minh họa SVG (`WeddingStyleMap.tsx`) theo phong cách bản đồ in trên thiệp đám cưới (nét vẽ tay nghệ thuật, hoa lá olive trang trí, la bàn cổ điển, trục đường Nguyễn Văn Cừ - Phường Chợ Quán, cổng 227 Nguyễn Văn Cừ, lối dẫn vào **Giảng đường 1**) kèm nút bấm mở link Google Maps `https://maps.app.goo.gl/dV3CwJ9quTNthErB9`.
 - **Acceptance criteria:**
-  - [ ] Bản đồ SVG hiển thị rõ cổng **227 Nguyễn Văn Cừ**, **Phường Chợ Quán**, và vị trí **Giảng đường 1** theo phong cách vẽ tay thiệp cưới.
-  - [ ] Nút *"Mở chỉ đường trên Google Maps"* trỏ đúng tới `https://maps.app.goo.gl/dV3CwJ9quTNthErB9` (`target="_blank"`), bấm vào không bị lật trang nhầm.
+  - [x] Bản đồ SVG hiển thị rõ cổng **227 Nguyễn Văn Cừ**, **Phường Chợ Quán**, và vị trí **Giảng đường 1** theo phong cách vẽ tay thiệp cưới.
+  - [x] Nút *"Mở chỉ đường trên Google Maps"* trỏ đúng tới `https://maps.app.goo.gl/dV3CwJ9quTNthErB9` (`target="_blank"`), bấm vào không bị lật trang nhầm (`stopPropagation`).
 - **Verification:**
-  - [ ] Build succeeds: `npm run build`
-  - [ ] Manual check: Bấm nút Google Maps trên Trang 2 mở đúng link `https://maps.app.goo.gl/dV3CwJ9quTNthErB9`.
+  - [x] Build succeeds: `npm run build`
+  - [x] Manual check: Nút Google Maps trên Trang 2 mở đúng link `https://maps.app.goo.gl/dV3CwJ9quTNthErB9`.
 - **Dependencies:** Task 3
 - **Files likely touched:**
   - `src/assets/svg/WeddingStyleMap.tsx`
   - `src/components/pages/Page2Map.tsx`
 - **Estimated scope:** Small (2 files)
 
-#### Task 8: Thiết kế Trang 3 — Trang Thank You & Liên Hệ Nhanh qua SĐT Mock (`Page3ThankYou.tsx`)
+#### Task 8: Thiết kế Trang 3 — Trang Thank You & Liên Hệ Nhanh qua SĐT Mock (`Page3ThankYou.tsx`) — ✅ Done
 - **Mô tả:** Thiết kế trang cuối (Thank You) gửi lời cảm ơn chân thành đến Gia Hân, kèm khu vực **Liên hệ nhanh** hiển thị số điện thoại mock của Việt Hoàng (cho phép bấm gọi `tel:` hoặc bấm sao chép số điện thoại kèm phản hồi *"Đã sao chép!"*), nút bắn pháo bông chúc mừng và nút quay lại Trang 0.
 - **Acceptance criteria:**
-  - [ ] Hiển thị thông điệp **Thank You** cá nhân hóa theo tên người nhận.
-  - [ ] Có nút liên hệ nhanh qua số điện thoại mock (Gọi điện & Sao chép SĐT) hoạt động mượt mà và không kích hoạt lật trang ngoài ý muốn.
-  - [ ] Có nút *"Quay lại trang bìa"* đưa sách về Trang 0.
+  - [x] Hiển thị thông điệp **Thank You** cá nhân hóa theo tên người nhận.
+  - [x] Có nút liên hệ nhanh qua số điện thoại mock (Gọi điện & Sao chép SĐT) hoạt động mượt mà và không kích hoạt lật trang ngoài ý muốn.
+  - [x] Có nút *"Về trang bìa"* đưa sách về Trang 0.
 - **Verification:**
-  - [ ] Build succeeds: `npm run build`
-  - [ ] Manual check: Bấm nút sao chép SĐT và nút gọi điện trên Trang 3 hoạt động đúng.
+  - [x] Build succeeds: `npm run build`
+  - [x] Manual check: Nút sao chép SĐT và nút gọi điện trên Trang 3 hoạt động đúng.
 - **Dependencies:** Task 3, Task 4
 - **Files likely touched:**
   - `src/components/pages/Page3ThankYou.tsx`
-- **Estimated scope:** Small (1 file)
+  - `src/App.tsx`
+- **Estimated scope:** Small (2 files)
 
 ### Checkpoint 3: Sau Phase 3 (All 4 Pages Complete)
-- [ ] Cả 4 trang (Trang 0, 1, 2, 3) hiển thị đầy đủ nội dung, hình minh họa SVG và các nút chức năng theo đúng PRD.
-- [ ] Các nút bên trong trang (Mở Google Maps, Liên hệ SĐT mock) bấm ăn ngay mà không làm sách tự lật.
+- [x] Cả 4 trang (Trang 0, 1, 2, 3) hiển thị đầy đủ nội dung, hình minh họa SVG và các nút chức năng theo đúng PRD.
+- [x] Các nút bên trong trang (Mở Google Maps, Liên hệ SĐT mock) bấm ăn ngay mà không làm sách tự lật.
 
 ---
 
