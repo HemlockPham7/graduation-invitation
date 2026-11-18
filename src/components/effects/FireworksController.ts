@@ -1,19 +1,30 @@
-import confetti, { type Options } from 'canvas-confetti';
+import confetti, { type CreateTypes, type Options } from 'canvas-confetti';
 
-/** Gold, HCMUS navy, and pearl white. */
-const COLORS = ['#D4AF37', '#F3E5AB', '#C5A059', '#1B365D', '#3B82F6', '#FFFFFF'];
+/** Gold, bright royal blue, and pearl white for high contrast over the dark navy background. */
+const COLORS = ['#D4AF37', '#F3E5AB', '#C5A059', '#3B82F6', '#60A5FA', '#FFFFFF'];
 
 const BASE: Options = {
   colors: COLORS,
   shapes: ['circle', 'square', 'star'],
-  // canvas-confetti skips the animation when the OS asks for reduced motion.
-  disableForReducedMotion: true,
-  zIndex: 60,
+  // Always show fireworks even when the OS has "reduced motion" enabled.
+  disableForReducedMotion: false,
+  zIndex: 9999,
 };
 
+let cannon: CreateTypes | null = null;
 let burstTimer: number | undefined;
 
 const random = (min: number, max: number) => Math.random() * (max - min) + min;
+
+function getCannon(): (options?: Options) => unknown {
+  if (!cannon && typeof document !== 'undefined') {
+    cannon = confetti.create(undefined, {
+      resize: true,
+      useWorker: false,
+    });
+  }
+  return cannon ?? confetti;
+}
 
 function clearBurstTimer() {
   if (burstTimer !== undefined) {
@@ -23,14 +34,21 @@ function clearBurstTimer() {
 }
 
 /**
- * Opening show: one big central burst, then fireworks popping on both sides.
- * The confetti canvas uses `pointer-events: none`, so the book stays clickable.
+ * Opening show: one big central burst, then fireworks popping across the sky.
+ * Triggered immediately when the invitation app opens and when flipping open the cover.
  */
-export function launchOpeningFireworks(durationMs = 2600): void {
+export function launchOpeningFireworks(durationMs = 2800): void {
   clearBurstTimer();
+  const fire = getCannon();
   const end = Date.now() + durationMs;
 
-  void confetti({ ...BASE, particleCount: 110, spread: 100, startVelocity: 45, origin: { x: 0.5, y: 0.6 } });
+  void fire({
+    ...BASE,
+    particleCount: 120,
+    spread: 110,
+    startVelocity: 48,
+    origin: { x: 0.5, y: 0.55 },
+  });
 
   burstTimer = window.setInterval(() => {
     const timeLeft = end - Date.now();
@@ -38,22 +56,37 @@ export function launchOpeningFireworks(durationMs = 2600): void {
       clearBurstTimer();
       return;
     }
-    const particleCount = Math.max(8, Math.round(40 * (timeLeft / durationMs)));
-    const shared: Options = { ...BASE, particleCount, spread: 360, startVelocity: 28, ticks: 70, gravity: 0.9 };
-    void confetti({ ...shared, origin: { x: random(0.08, 0.3), y: random(0.1, 0.4) } });
-    void confetti({ ...shared, origin: { x: random(0.7, 0.92), y: random(0.1, 0.4) } });
+    const particleCount = Math.max(14, Math.round(45 * (timeLeft / durationMs)));
+    const shared: Options = {
+      ...BASE,
+      particleCount,
+      spread: 360,
+      startVelocity: 32,
+      ticks: 80,
+      gravity: 0.85,
+    };
+    void fire({ ...shared, origin: { x: random(0.12, 0.38), y: random(0.15, 0.45) } });
+    void fire({ ...shared, origin: { x: random(0.62, 0.88), y: random(0.15, 0.45) } });
   }, 280);
 }
 
-/** Two side cannons — used on the Thank-you page and the manual sparkle button. */
+/** Multi-cannon celebration burst — used on the manual fireworks buttons and Thank-you page. */
 export function launchCelebration(): void {
-  const shared: Options = { ...BASE, particleCount: 70, spread: 65, startVelocity: 55 };
-  void confetti({ ...shared, angle: 60, origin: { x: 0, y: 0.75 } });
-  void confetti({ ...shared, angle: 120, origin: { x: 1, y: 0.75 } });
+  const fire = getCannon();
+  const side: Options = { ...BASE, particleCount: 75, spread: 70, startVelocity: 55 };
+  void fire({ ...side, angle: 60, origin: { x: 0.02, y: 0.75 } });
+  void fire({ ...side, angle: 120, origin: { x: 0.98, y: 0.75 } });
+  void fire({
+    ...BASE,
+    particleCount: 90,
+    spread: 120,
+    startVelocity: 45,
+    origin: { x: 0.5, y: 0.45 },
+  });
 }
 
-/** Stops pending bursts and clears particles (e.g. on unmount). */
+/** Stops pending bursts and clears particles on unmount. */
 export function stopFireworks(): void {
   clearBurstTimer();
-  confetti.reset();
+  cannon?.reset();
 }

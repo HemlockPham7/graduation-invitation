@@ -101,8 +101,8 @@ flowchart TD
 #### Task 4: Tích hợp hiệu ứng bắn pháo bông chúc mừng (`FireworksController.ts`) — ✅ Done
 - **Mô tả:** Cài đặt module bắn pháo bông bằng `canvas-confetti` với tông màu Vàng Gold, Xanh Navy HCMUS và Trắng ánh kim. Tự động bắn pháo bông rực rỡ khi người dùng mở thiệp (lật từ Trang 0 sang Trang 1) và khi lật đến Trang 3 (hoặc bấm nút bắn pháo bông trên góc màn hình).
 - **Acceptance criteria:**
-  - [x] Khi mở thiệp (lật qua Trang 1 hoặc bấm nút *"Mở thiệp"*), hiệu ứng pháo bông bắn lên mượt mà.
-  - [x] Có hàm dọn dẹp / tôn trọng `prefers-reduced-motion` và không chặn thao tác click của người dùng (`pointer-events: none`).
+  - [x] Khi vừa mở ứng dụng thiệp mời, khi lật qua Trang 1 hoặc khi bấm nút *"Pháo hoa"*, hiệu ứng pháo bông bắn lên mượt mà.
+  - [x] Sử dụng `disableForReducedMotion: false` và `useWorker: false` (`zIndex: 9999`) để luôn hiển thị pháo hoa trên Windows mà không chặn thao tác click của người dùng (`pointer-events: none`).
 - **Verification:**
   - [x] Build succeeds: `npm run build`
   - [x] Manual check: Mở thiệp từ Trang 0 sang Trang 1 kích hoạt `launchOpeningFireworks()` ngay lập tức; sang Trang 3 hoặc bấm nút góc phải kích hoạt `launchCelebration()`.
@@ -183,16 +183,16 @@ flowchart TD
 
 ---
 
-### PHASE 4: Kiểm Thử Tự Động, Tinh Chỉnh Responsive & Đóng Gói (Polish & Verification)
+### PHASE 4: Kiểm Thử Tự Động, Tinh Chỉnh Responsive & Đóng Gói (Polish & Verification) — ✅ HOÀN THÀNH (18/11/2026)
 
-#### Task 9: Viết Component Tests & Tinh chỉnh trải nghiệm Mobile / Desktop
-- **Mô tả:** Viết bộ kiểm thử tự động (`GraduationBook.test.tsx`) xác nhận toàn bộ nội dung 4 trang, luồng bấm Next/Previous, link Google Maps và SĐT mock; đồng thời kiểm tra độ tương thích hiển thị trên các khung nhìn Mobile (375px) và Desktop (1280px).
+#### Task 9: Viết Component Tests & Tinh chỉnh trải nghiệm Mobile / Desktop — ✅ Done
+- **Mô tả:** Viết bộ kiểm thử tự động (`GraduationBook.test.tsx`) xác nhận toàn bộ nội dung 4 trang, luồng bấm Next/Previous, link Google Maps và SĐT mock; đồng thời kiểm tra độ tương thích hiển thị trên các khung nhìn Mobile (375px) và Desktop (1280px/1920px).
 - **Acceptance criteria:**
-  - [ ] Toàn bộ test suite (`useGuestName.test.ts` và `GraduationBook.test.tsx`) pass 100%.
-  - [ ] Không có lỗi TypeScript hay cảnh báo ESLint khi chạy `npm run build` và `npm run lint`.
+  - [x] Toàn bộ test suite (`useGuestName.test.ts`, `bookLayout.test.ts` và `GraduationBook.test.tsx` — 20/20 tests) pass 100%.
+  - [x] Không có lỗi TypeScript khi chạy `npm run build` và `npm run typecheck`.
 - **Verification:**
-  - [ ] Tests pass: `npm run test -- --run`
-  - [ ] Build succeeds: `npm run build`
+  - [x] Tests pass: `npm run test -- --run` (20/20 passed)
+  - [x] Build succeeds: `npm run build`
 - **Dependencies:** Task 5, Task 6, Task 7, Task 8
 - **Files likely touched:**
   - `tests/GraduationBook.test.tsx`
@@ -201,8 +201,8 @@ flowchart TD
 - **Estimated scope:** Medium (3 files)
 
 ### Checkpoint 4: Hoàn tất Dự án (Final Release Gate)
-- [ ] Tất cả tiêu chí nghiệm thu từ `SC-1` đến `SC-6` trong `docs/PRD.md` đều đạt.
-- [ ] `npm run test -- --run` và `npm run build` thành công 100%.
+- [x] Tất cả tiêu chí nghiệm thu từ `SC-1` đến `SC-6` trong `docs/PRD.md` đều đạt.
+- [x] `npm run test -- --run` và `npm run build` thành công 100%.
 
 ---
 

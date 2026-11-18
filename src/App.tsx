@@ -56,18 +56,29 @@ export default function App() {
     [pages.length],
   );
 
-  useEffect(() => stopFireworks, []);
+  // Fire opening fireworks immediately when the invitation page loads.
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      launchOpeningFireworks();
+    }, 150);
+
+    return () => {
+      window.clearTimeout(timer);
+      stopFireworks();
+    };
+  }, []);
 
   return (
     <main className="relative flex min-h-full flex-col items-center justify-center overflow-x-hidden overflow-y-auto px-3 py-6">
       <button
         type="button"
-        onClick={launchCelebration}
+        onClick={() => launchOpeningFireworks()}
         aria-label="Bắn pháo bông chúc mừng"
         title="Bắn pháo bông"
-        className="absolute right-3 top-3 z-20 rounded-full border border-hcmus-gold/50 bg-hcmus-navy-light/70 p-2.5 text-hcmus-gold shadow-lg backdrop-blur transition hover:bg-hcmus-gold/20"
+        className="fixed right-4 top-4 z-50 inline-flex items-center gap-2 rounded-full border border-hcmus-gold/70 bg-hcmus-navy-light/90 px-4 py-2.5 text-xs font-medium text-hcmus-gold-pale shadow-lg backdrop-blur transition hover:bg-hcmus-gold/25 sm:text-sm"
       >
-        <Sparkles className="h-5 w-5" aria-hidden="true" />
+        <Sparkles className="h-4 w-4 text-hcmus-gold-bright sm:h-5 sm:w-5" aria-hidden="true" />
+        <span>Pháo hoa</span>
       </button>
 
       <GraduationBook pages={pages} onPageChange={handlePageChange} />

@@ -203,9 +203,9 @@ Thay vì dùng iframe bản đồ thô cứng, `WeddingStyleMap.tsx` là một b
 
 - Sử dụng `canvas-confetti` tạo hiệu ứng bắn pháo bông đa đợt (multi-burst fireworks) từ hai bên cánh gà và giữa màn hình với bảng màu `['#D4AF37', '#F3E5AB', '#1B365D', '#3B82F6', '#FFFFFF']`.
 - **Thời điểm kích hoạt:**
-  1. Ngay khi người dùng mở thiệp (chuyển từ **Trang 0 → Trang 1** lần đầu tiên, hoặc bấm nút *"Mở thiệp"*).
-  2. Khi người dùng lật tới **Trang 3 (Thank You)** hoặc bấm nút *"Bắn pháo bông chúc mừng"* trên giao diện.
-- Kiểm tra `window.matchMedia('(prefers-reduced-motion: reduce)')` để giảm số lượng hạt nếu thiết bị bật chế độ tiết kiệm chuyển động.
+  1. Ngay khi người dùng vừa mở ứng dụng thiệp mời (khi tải trang lần đầu ở Trang 0) và khi lật mở bìa từ **Trang 0 → Trang 1**.
+  2. Khi người dùng lật tới **Trang 3 (Thank You)** hoặc bấm nút **"Pháo hoa"** ở góc trên bên phải màn hình / nút **"Bắn pháo bông"** ở Trang 3.
+- Cấu hình `confetti.create(undefined, { resize: true, useWorker: false })` với `disableForReducedMotion: false` và `zIndex: 9999` để đảm bảo pháo hoa luôn hiển thị rực rỡ trên mọi máy Windows (kể cả khi Windows tắt Animation effects).
 
 ---
 

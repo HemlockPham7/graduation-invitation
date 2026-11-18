@@ -101,12 +101,12 @@ Cuốn sách gồm **4 trang (tương ứng chỉ mục Trang 0, Trang 1, Trang 
 
 ## 6. Tiêu Chí Nghiệm Thu (Success Criteria)
 
-- [ ] **SC-1 (Đúng cấu trúc 4 trang):** Hiển thị đầy đủ và chính xác nội dung Trang 0 (Bìa HCMUS - KHMT - APCS), Trang 1 (Thư mời Phạm Việt Hoàng gửi Gia Hân, 8h sáng 06/12, Giảng đường 1 - 227 Nguyễn Văn Cừ, P. Chợ Quán), Trang 2 (Bản đồ vẽ tay kiểu thiệp cưới + nút mở `https://maps.app.goo.gl/dV3CwJ9quTNthErB9`), Trang 3 (Thank you + nút liên hệ số điện thoại mock).
-- [ ] **SC-2 (Điều hướng Next / Previous):** Nút Next và Previous hoạt động chính xác ở mọi trang; disable đúng trạng thái đầu/cuối; hỗ trợ vuốt tay và phím mũi tên.
-- [ ] **SC-3 (Responsive Mobile & Desktop):** Trên Mobile (375×812) hiển thị 1 trang dọc không bị tràn ngang hay cắt chữ; trên Desktop (1280×800) hiển thị sách mở đôi 3D cân đối.
-- [ ] **SC-4 (Hiệu ứng Pháo Bông):** Khi mở thiệp từ Trang 0 sang Trang 1 (và/hoặc nút chúc mừng), hiệu ứng pháo bông bắn mượt mà ở ≥ 55fps.
-- [ ] **SC-5 (Cá nhân hóa URL):** Truy cập `/` hiển thị tên `Gia Hân`; truy cập `/?to=Minh%20Anh` hiển thị tên `Minh Anh` ở Trang 1 và Trang 3.
-- [ ] **SC-6 (100% Static & Dễ cấu hình):** Không phụ thuộc backend; toàn bộ thông tin chữ, số điện thoại mock, link Google Maps nằm trong một file cấu hình trung tâm (`src/config/invitationConfig.ts`).
+- [x] **SC-1 (Đúng cấu trúc 4 trang):** Hiển thị đầy đủ và chính xác nội dung Trang 0 (Bìa HCMUS - KHMT - APCS), Trang 1 (Thư mời Phạm Việt Hoàng gửi Gia Hân, 8h sáng 06/12, Giảng đường 1 - 227 Nguyễn Văn Cừ, P. Chợ Quán), Trang 2 (Bản đồ vẽ tay kiểu thiệp cưới + nút mở `https://maps.app.goo.gl/dV3CwJ9quTNthErB9`), Trang 3 (Thank you + nút liên hệ số điện thoại mock).
+- [x] **SC-2 (Điều hướng Next / Previous):** Nút Next và Previous hoạt động chính xác ở mọi trang; disable đúng trạng thái đầu/cuối; tắt kéo góc bìa bằng chuột theo yêu cầu.
+- [x] **SC-3 (Responsive Mobile & Desktop):** Trên Mobile (375×812) hiển thị 1 trang dọc không bị tràn ngang hay cắt chữ; trên Desktop hiển thị sách mở đôi 3D cân đối (kích thước đã được phóng lớn thêm 70%).
+- [x] **SC-4 (Hiệu ứng Pháo Bông):** Khi mở thiệp từ Trang 0 sang Trang 1 (và/hoặc nút chúc mừng), hiệu ứng pháo bông bắn mượt mà ở ≥ 55fps.
+- [x] **SC-5 (Cá nhân hóa URL):** Truy cập `/` hiển thị tên `Gia Hân`; truy cập `/?to=Minh%20Anh` hiển thị tên `Minh Anh` ở Trang 1 và Trang 3.
+- [x] **SC-6 (100% Static & Dễ cấu hình):** Không phụ thuộc backend; toàn bộ thông tin chữ, số điện thoại mock, link Google Maps nằm trong một file cấu hình trung tâm (`src/config/invitationConfig.ts`).
 
 ---
 
