@@ -29,7 +29,7 @@ export function Page1Invitation({ guestName }: Page1InvitationProps) {
       {/* Personalized recipient block */}
       <section aria-label="Người nhận thiệp" className="my-2 space-y-1.5">
         <p className="font-serif text-sm italic text-ink-soft sm:text-base md:text-lg">
-          Thân mời bạn
+          Thân mời
         </p>
         <p
           data-testid="guest-name-heading"
@@ -100,7 +100,7 @@ export function Page1Invitation({ guestName }: Page1InvitationProps) {
       {/* Sign-off */}
       <footer className="flex items-center justify-between pt-2 text-left">
         <span className="font-serif text-xs italic text-ink-soft sm:text-sm">
-          Bấm Next để xem bản đồ →
+
         </span>
         <div className="text-right">
           <p className="text-xs uppercase tracking-wider text-ink-soft">Thân mến,</p>

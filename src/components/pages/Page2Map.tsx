@@ -41,10 +41,10 @@ export function Page2Map() {
           <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-hcmus-navy sm:h-6 sm:w-6" aria-hidden="true" />
           <div>
             <p className="font-semibold text-hcmus-navy sm:text-base">
-              {ceremony.hallName} — {university.nameVi}
+              {ceremony.hallName} — Trường Đại học Khoa học Tự nhiên
             </p>
             <p className="mt-0.5 text-xs text-ink-soft sm:text-sm">
-              {ceremony.addressDisplay} (Vào cổng chính 227 Nguyễn Văn Cừ, đi thẳng vào Giảng đường 1).
+              {ceremony.addressDisplay}
             </p>
           </div>
         </div>

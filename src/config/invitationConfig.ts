@@ -17,8 +17,8 @@ export const invitationConfig: InvitationConfig = {
     fullName: 'Phạm Việt Hoàng',
     shortName: 'Việt Hoàng',
     degreeTitle: 'Cử nhân Khoa học Máy tính — APCS',
-    mockPhoneDisplay: '0909 123 456',
-    mockPhoneTel: '0909123456',
+    mockPhoneDisplay: '0376 062 659',
+    mockPhoneTel: '0376062659',
   },
   guest: {
     defaultName: 'Gia Hân',

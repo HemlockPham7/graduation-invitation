@@ -62,8 +62,7 @@ export function Page3ThankYou({ guestName }: Page3ThankYouProps) {
       <section aria-label="Thông điệp cảm ơn" className="my-2 max-w-[440px] space-y-3">
         <p className="font-serif text-base leading-relaxed text-ink sm:text-lg md:text-xl">
           Sự hiện diện của <span className="font-semibold text-hcmus-navy">{guestName}</span> là niềm vinh hạnh và món quà ý nghĩa nhất đối với{' '}
-          <span className="font-semibold text-hcmus-navy">{graduate.shortName}</span> trong ngày tốt nghiệp tại{' '}
-          <span className="font-semibold text-hcmus-navy">{university.program}</span>.
+          <span className="font-semibold text-hcmus-navy">{graduate.shortName}</span> trong ngày tốt nghiệp.
         </p>
         <p className="text-xs italic text-ink-soft sm:text-sm md:text-base">
           Hẹn gặp bạn lúc {ceremony.timeDisplay}, {ceremony.dateDisplay} tại {ceremony.hallName}!
