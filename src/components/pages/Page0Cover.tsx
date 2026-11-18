@@ -1,20 +1,12 @@
-import type { SyntheticEvent } from 'react';
-import { BookOpen } from 'lucide-react';
 import { ApcsBadge } from '../../assets/svg/ApcsBadge';
 import { HcmusLogo } from '../../assets/svg/HcmusLogo';
-import { useBookControls } from '../book/GraduationBook';
 import { invitationConfig } from '../../config/invitationConfig';
-
-const stopFlip = (event: SyntheticEvent) => {
-  event.stopPropagation();
-};
 
 /**
  * Page 0 (Front Cover): Cream fine-art paper cover matching Pages 1 & 2 so
  * the official HCMUS blue logo stands out naturally.
  */
 export function Page0Cover() {
-  const { next } = useBookControls();
   const { university, graduate, ceremony } = invitationConfig;
 
   return (
