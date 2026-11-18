@@ -145,7 +145,7 @@ export function GraduationBook({ pages, onPageChange }: GraduationBookProps) {
           className="transition-transform duration-700 ease-out"
           style={{ transform: `translateX(${coverShift}px)` }}
         >
-          <div key={bookKey} style={bookStyle} className="drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)]">
+          <div key={bookKey} style={bookStyle} className="drop-shadow-[0_22px_38px_rgba(15,37,71,0.28)]">
             <HTMLFlipBook
               ref={bookRef}
               className="graduation-book"

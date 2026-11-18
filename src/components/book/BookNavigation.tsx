@@ -49,7 +49,7 @@ export function BookNavigation({
   return (
     <nav
       aria-label="Điều hướng trang thiệp"
-      className="flex items-center gap-2 rounded-full border border-hcmus-gold/40 bg-hcmus-navy-light/70 px-2 py-1 text-paper-cream shadow-lg backdrop-blur"
+      className="flex items-center gap-2 rounded-full border border-hcmus-gold/70 bg-hcmus-navy px-2.5 py-1.5 text-paper-cream shadow-lg"
     >
       <button type="button" onClick={onPrev} disabled={!canGoPrev} className={navButton} aria-label="Trang trước (Previous)">
         <ChevronLeft className="h-4 w-4" aria-hidden="true" />

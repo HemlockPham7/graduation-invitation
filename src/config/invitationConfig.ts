@@ -8,7 +8,7 @@ export const invitationConfig: InvitationConfig = {
   university: {
     nameVi: 'Trường Đại học Khoa học Tự nhiên - ĐHQG-HCM',
     nameEn: 'VNU-HCM University of Science (HCMUS)',
-    campusWard: 'Phường Chợ Quán, TP. Hồ Chí Minh',
+    campusWard: 'TP. Hồ Chí Minh',
     faculty: 'Khoa Công nghệ Thông tin',
     major: 'Ngành Khoa học Máy tính',
     program: 'Chương trình Tiên tiến (APCS)',

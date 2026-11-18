@@ -75,7 +75,7 @@ export default function App() {
         onClick={() => launchOpeningFireworks()}
         aria-label="Bắn pháo bông chúc mừng"
         title="Bắn pháo bông"
-        className="fixed right-4 top-4 z-50 inline-flex items-center gap-2 rounded-full border border-hcmus-gold/70 bg-hcmus-navy-light/90 px-4 py-2.5 text-xs font-medium text-hcmus-gold-pale shadow-lg backdrop-blur transition hover:bg-hcmus-gold/25 sm:text-sm"
+        className="fixed right-4 top-4 z-50 inline-flex items-center gap-2 rounded-full border border-hcmus-gold bg-hcmus-navy px-4 py-2.5 text-xs font-medium text-hcmus-gold-pale shadow-lg transition hover:bg-hcmus-navy-light sm:text-sm"
       >
         <Sparkles className="h-4 w-4 text-hcmus-gold-bright sm:h-5 sm:w-5" aria-hidden="true" />
         <span>Pháo hoa</span>

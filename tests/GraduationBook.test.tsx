@@ -26,12 +26,12 @@ describe('GraduationBook & 4-Page Invitation App', () => {
     expect(screen.getByTestId('book-page-3')).toBeTruthy();
   });
 
-  it('Page 0 (Cover) displays HCMUS, Phường Chợ Quán, Computer Science, APCS, and Phạm Việt Hoàng', () => {
+  it('Page 0 (Cover) displays HCMUS, Computer Science, APCS, and Phạm Việt Hoàng', () => {
     render(<App />);
     const page0 = screen.getByTestId('book-page-0');
 
     expect(within(page0).getByText(/Trường Đại học Khoa học Tự nhiên/i)).toBeTruthy();
-    expect(within(page0).getByText(/Phường Chợ Quán/i)).toBeTruthy();
+    expect(within(page0).getByText(/Graduation Invitation/i)).toBeTruthy();
     expect(within(page0).getByText(/Ngành Khoa học Máy tính/i)).toBeTruthy();
     expect(within(page0).getByText(/Chương trình Tiên tiến \(APCS\)/i)).toBeTruthy();
     expect(within(page0).getByText('Phạm Việt Hoàng')).toBeTruthy();

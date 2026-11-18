@@ -10,23 +10,20 @@ interface PageSheetProps {
 }
 
 /**
- * One physical sheet of the book. react-pageflip clones its direct children
- * and attaches its own ref, so every page must forward its ref to a DOM node.
+ * One physical sheet of the book. All 4 pages (0, 1, 2, 3) share the same
+ * fine-art cream paper surface and gilded ornate border so the HCMUS blue
+ * crest and navy typography stand out uniformly.
  */
 export const PageSheet = forwardRef<HTMLDivElement, PageSheetProps>(
-  ({ children, pageNumber, variant = 'inner' }, ref) => {
-    const isCover = variant === 'cover';
-
+  ({ children, pageNumber }, ref) => {
     return (
       <div
         ref={ref}
         data-testid={`book-page-${pageNumber}`}
-        className={`book-page select-none overflow-hidden ${
-          isCover ? 'bg-hcmus-navy text-paper-cream' : 'paper-texture text-ink'
-        }`}
+        className="book-page paper-texture select-none overflow-hidden text-ink"
       >
         <div className="relative flex h-full w-full flex-col">
-          <OrnateFrame tone={isCover ? 'navy' : 'cream'} />
+          <OrnateFrame tone="cream" />
           <div className="relative z-10 flex h-full w-full flex-col px-7 py-8 sm:px-12 sm:py-12 md:px-14 md:py-14">
             {children}
           </div>

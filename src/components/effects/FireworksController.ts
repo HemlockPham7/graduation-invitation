@@ -1,7 +1,7 @@
 import confetti, { type CreateTypes, type Options } from 'canvas-confetti';
 
-/** Gold, bright royal blue, and pearl white for high contrast over the dark navy background. */
-const COLORS = ['#D4AF37', '#F3E5AB', '#C5A059', '#3B82F6', '#60A5FA', '#FFFFFF'];
+/** Gold, HCMUS navy, royal blue, and festive crimson for high contrast over the warm cream background. */
+const COLORS = ['#D4AF37', '#B8860B', '#0F2547', '#1D4ED8', '#3B82F6', '#E11D48'];
 
 const BASE: Options = {
   colors: COLORS,

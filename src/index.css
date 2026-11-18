@@ -10,11 +10,11 @@
   }
 
   body {
-    @apply bg-hcmus-navy font-sans text-ink antialiased;
-    /* Deep navy backdrop with a soft golden glow behind the book */
+    @apply font-sans text-ink antialiased;
+    /* Warm pearl-stone backdrop so the cream paper pages & gold frame stand out clearly */
+    background-color: #efe9dc;
     background-image:
-      radial-gradient(ellipse at 50% 40%, rgba(212, 175, 55, 0.18), transparent 60%),
-      radial-gradient(ellipse at 50% 120%, rgba(27, 54, 93, 0.9), transparent 70%);
+      radial-gradient(ellipse at 50% 35%, #f9f6ef 0%, #efe9dc 55%, #e2d8c3 100%);
     background-attachment: fixed;
   }
 }
