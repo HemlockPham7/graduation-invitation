@@ -12,11 +12,11 @@ Thiết kế kiến trúc ứng dụng web tĩnh (Single-Page Static Web Applica
 |---|---|---|---|
 | **Core Framework** | React + TypeScript | React `^18.3.1`, TS `^5.6.x` | Xây dựng UI component-based an toàn kiểu dữ liệu |
 | **Build Tool** | Vite | `^6.0.x` | Bundler tốc độ cao, tối ưu static assets |
-| **Styling** | Tailwind CSS | `^3.4.x` (hoặc `^4.0.x`) | Thiết kế hệ thống màu HCMUS Navy & Gold, họa tiết giấy mỹ thuật, responsive |
+| **Styling** | Tailwind CSS + PostCSS + Autoprefixer | `^3.4.x` | Thiết kế hệ thống màu HCMUS Navy & Gold, họa tiết giấy mỹ thuật, responsive (PostCSS/Autoprefixer là yêu cầu bắt buộc của Tailwind v3) |
 | **3D Book Flip** | `react-pageflip` (`page-flip`) | `^2.0.3` | Engine lật trang sách 3D hỗ trợ `showCover`, Mobile 1 trang & Desktop 2 trang |
 | **Fireworks Effect** | `canvas-confetti` + `@types/canvas-confetti` | `^1.9.3` | Hiệu ứng bắn pháo bông nhẹ, chạy trên Web Worker / HTML5 Canvas |
 | **Icons** | `lucide-react` | `^0.460.x` | Bộ icon sắc nét cho nút điều hướng, bản đồ, liên hệ nhanh |
-| **Testing** | Vitest + React Testing Library | `^2.1.x` | Unit test & Component test cho luồng lật trang, URL param và dữ liệu |
+| **Testing** | Vitest + React Testing Library + jsdom | Vitest `^3.0.x` (tương thích Vite 6) | Unit test & Component test cho luồng lật trang, URL param và dữ liệu |
 
 ---
 
@@ -38,8 +38,8 @@ npm run preview
 # Chạy toàn bộ Unit & Component Tests
 npm run test -- --run
 
-# Kiểm tra chất lượng code (ESLint)
-npm run lint
+# Kiểm tra kiểu TypeScript (thay cho ESLint — ESLint chưa được cài, cần duyệt trước khi thêm)
+npm run typecheck
 ```
 
 ---
@@ -59,7 +59,7 @@ graduation-invitation/
 ├── src/
 │   ├── assets/
 │   │   └── svg/
-│   │       ├── HcmusLogo.tsx          # Logo вектор ĐH Khoa học Tự nhiên (HCMUS)
+│   │       ├── HcmusLogo.tsx          # Logo vector ĐH Khoa học Tự nhiên (HCMUS)
 │   │       ├── ApcsBadge.tsx          # Huy hiệu Chương trình Tiên tiến APCS - KHMT
 │   │       ├── WeddingStyleMap.tsx    # Bản đồ vẽ tay phong cách thiệp cưới (227 NVC - Giảng đường 1)
 │   │       └── OrnateFrame.tsx        # Khung viền hoa văn cổ điển mạ vàng trên nền giấy kem
