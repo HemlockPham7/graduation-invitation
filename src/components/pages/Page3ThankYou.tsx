@@ -18,7 +18,7 @@ const stopFlip = (event: SyntheticEvent) => {
  */
 export function Page3ThankYou({ guestName }: Page3ThankYouProps) {
   const { goTo } = useBookControls();
-  const { graduate, ceremony, university } = invitationConfig;
+  const { graduate, ceremony } = invitationConfig;
   const [copied, setCopied] = useState(false);
 
   const handleCopyPhone = async (event: SyntheticEvent) => {
