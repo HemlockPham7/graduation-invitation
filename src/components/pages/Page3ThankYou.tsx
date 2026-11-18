@@ -4,10 +4,6 @@ import { useBookControls } from '../book/GraduationBook';
 import { launchCelebration } from '../effects/FireworksController';
 import { invitationConfig } from '../../config/invitationConfig';
 
-interface Page3ThankYouProps {
-  guestName: string;
-}
-
 const stopFlip = (event: SyntheticEvent) => {
   event.stopPropagation();
 };
@@ -16,7 +12,7 @@ const stopFlip = (event: SyntheticEvent) => {
  * Page 3 (Back Cover — Thank You & Quick Contact): Unified cream paper theme
  * matching Pages 0, 1, and 2 with warm thank-you note and quick contact card.
  */
-export function Page3ThankYou({ guestName }: Page3ThankYouProps) {
+export function Page3ThankYou() {
   const { goTo } = useBookControls();
   const { graduate, ceremony } = invitationConfig;
   const [copied, setCopied] = useState(false);
@@ -61,7 +57,7 @@ export function Page3ThankYou({ guestName }: Page3ThankYouProps) {
       {/* Heartfelt message */}
       <section aria-label="Thông điệp cảm ơn" className="my-2 max-w-[440px] space-y-3">
         <p className="font-serif text-base leading-relaxed text-ink sm:text-lg md:text-xl">
-          Sự hiện diện của <span className="font-semibold text-hcmus-navy">{guestName}</span> là niềm vinh hạnh và món quà ý nghĩa nhất đối với{' '}
+          Sự hiện diện của <span className="font-semibold text-hcmus-navy">Cục Vàng Gia Hân</span> là niềm vinh hạnh và món quà ý nghĩa nhất đối với{' '}
           <span className="font-semibold text-hcmus-navy">{graduate.shortName}</span> trong ngày tốt nghiệp.
         </p>
         <p className="text-xs italic text-ink-soft sm:text-sm md:text-base">

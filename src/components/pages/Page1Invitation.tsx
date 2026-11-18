@@ -29,7 +29,7 @@ export function Page1Invitation({ guestName }: Page1InvitationProps) {
       {/* Personalized recipient block */}
       <section aria-label="Người nhận thiệp" className="my-2 space-y-1.5">
         <p className="font-serif text-sm italic text-ink-soft sm:text-base md:text-lg">
-          Thân mời
+          Thân mời bé người yêu xinh đẹp đáng yêu
         </p>
         <p
           data-testid="guest-name-heading"
