@@ -39,7 +39,7 @@ export default function App() {
         id: 'thanks',
         label: 'Lời cảm ơn',
         variant: 'cover',
-        content: <Page3ThankYou guestName={guestName} />,
+        content: <Page3ThankYou />,
       },
     ],
     [guestName],
