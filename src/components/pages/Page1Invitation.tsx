@@ -1,4 +1,4 @@
-import { Calendar, Clock, GraduationCap, MapPin } from 'lucide-react';
+import { Calendar, Clock, MapPin } from 'lucide-react';
 import { invitationConfig } from '../../config/invitationConfig';
 
 interface Page1InvitationProps {
@@ -11,7 +11,7 @@ interface Page1InvitationProps {
  * Giảng đường 1, 227 Nguyễn Văn Cừ, Phường Chợ Quán.
  */
 export function Page1Invitation({ guestName }: Page1InvitationProps) {
-  const { university, graduate, ceremony } = invitationConfig;
+  const { graduate, ceremony } = invitationConfig;
 
   return (
     <div className="flex h-full flex-col justify-between text-center">
@@ -50,21 +50,6 @@ export function Page1Invitation({ guestName }: Page1InvitationProps) {
         className="rounded-sm border border-hcmus-gold/55 bg-paper-cream-dark/75 px-4 py-3.5 text-left shadow-sm sm:px-6 sm:py-5"
       >
         <div className="space-y-3 text-sm sm:text-base">
-          <div className="flex items-start gap-3">
-            <GraduationCap className="mt-1 h-5 w-5 shrink-0 text-hcmus-gold sm:h-6 sm:w-6" aria-hidden="true" />
-            <div>
-              <p className="text-xs uppercase tracking-wider text-ink-soft">Tân cử nhân</p>
-              <p className="font-display text-base font-bold text-hcmus-navy sm:text-lg md:text-xl">
-                {graduate.fullName}
-              </p>
-              <p className="text-xs text-ink-soft sm:text-sm">
-                {university.major} · {university.program}
-              </p>
-            </div>
-          </div>
-
-          <div className="h-px w-full bg-hcmus-gold/30" />
-
           <div className="grid grid-cols-2 gap-3">
             <div className="flex items-start gap-2.5">
               <Clock className="mt-1 h-5 w-5 shrink-0 text-hcmus-gold sm:h-6 sm:w-6" aria-hidden="true" />
