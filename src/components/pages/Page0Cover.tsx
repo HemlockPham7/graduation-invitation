@@ -64,16 +64,7 @@ export function Page0Cover() {
 
       {/* Open invitation button */}
       <footer className="pt-2">
-        <button
-          type="button"
-          onClick={next}
-          onPointerDown={stopFlip}
-          onMouseDown={stopFlip}
-          className="inline-flex items-center gap-2.5 rounded-full bg-hcmus-navy px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] text-paper-cream shadow-md transition hover:bg-hcmus-navy-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-hcmus-gold sm:px-8 sm:py-3.5 sm:text-base"
-        >
-          <BookOpen className="h-4 w-4 text-hcmus-gold-bright sm:h-5 sm:w-5" aria-hidden="true" />
-          <span>Mở Thiệp Mời →</span>
-        </button>
+
       </footer>
     </div>
   );

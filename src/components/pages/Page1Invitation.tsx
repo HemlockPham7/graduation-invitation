@@ -99,15 +99,7 @@ export function Page1Invitation({ guestName }: Page1InvitationProps) {
 
       {/* Sign-off */}
       <footer className="flex items-center justify-between pt-2 text-left">
-        <span className="font-serif text-xs italic text-ink-soft sm:text-sm">
 
-        </span>
-        <div className="text-right">
-          <p className="text-xs uppercase tracking-wider text-ink-soft">Thân mến,</p>
-          <p className="font-script text-2xl text-hcmus-navy sm:text-3xl md:text-4xl">
-            {graduate.shortName}
-          </p>
-        </div>
       </footer>
     </div>
   );
